@@ -1,7 +1,8 @@
+from __future__ import division
 from collections import defaultdict
 
-def LD(src, dest):
-    m, n = len(src), len(dest)
+def LD(s1, s2):
+    m, n = len(s1), len(s2)
     d = defaultdict(lambda: 0)
 
     for i in range(1, m+1):
@@ -12,7 +13,7 @@ def LD(src, dest):
 
     for j in range(1, n+1):
         for i in range(1, m+1):
-            if src[i-1] == dest[j-1]:
+            if s1[i-1] == s2[j-1]:
                 cost = 0
             else:
                 cost = 1
@@ -23,4 +24,4 @@ def LD(src, dest):
                 d[(i-1, j-1)] + cost
             )
 
-    return d[(m, n)]
+    return 1 - d[(m, n)] / max(m, n)
