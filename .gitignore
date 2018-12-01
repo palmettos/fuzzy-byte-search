@@ -1,2 +1,5 @@
 .vscode/
+build/
+*.c
+*.pyd
 *.pyc
